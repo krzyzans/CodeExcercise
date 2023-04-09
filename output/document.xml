@@ -1,0 +1,211 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CodeExcercise</name>
+    </assembly>
+    <members>
+        <member name="T:CodeExcercise.Controllers.CustomerController">
+            <summary>
+            Customer Controller
+            </summary>
+        </member>
+        <member name="M:CodeExcercise.Controllers.CustomerController.#ctor(MediatR.IMediator)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:CodeExcercise.Controllers.CustomerController.Get">
+            <summary>
+            HttpGet
+            </summary>
+        </member>
+        <member name="M:CodeExcercise.Controllers.CustomerController.Post(CodeExcercise.Common.Models.DTO.ClientCustomer)">
+            <summary>
+            Creates new customer
+            </summary>
+        </member>
+        <member name="M:CodeExcercise.Controllers.CustomerController.Delete(System.Guid)">
+            <summary>
+            Delete customer controller method
+            </summary>
+        </member>
+        <member name="T:CodeExcercise.CQRS.Handlers.CreateCustomerHandler">
+            <summary>
+            Handler to get customer
+            </summary>
+        </member>
+        <member name="M:CodeExcercise.CQRS.Handlers.CreateCustomerHandler.#ctor(Microsoft.Extensions.Logging.ILogger{CodeExcercise.CQRS.Handlers.CreateCustomerHandler},Abstraction.Services.IValidationService{CodeExcercise.Common.Models.Domain.Customer},Abstraction.Services.IMapService{CodeExcercise.Common.Models.Domain.Customer,CodeExcercise.Common.Models.DTO.DatabaseCustomer},Abstraction.Repositories.IRepository{CodeExcercise.Common.Models.DTO.DatabaseCustomer})">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:CodeExcercise.CQRS.Handlers.CreateCustomerHandler.Handle(CodeExcercise.CQRS.Requests.CreateCustomerRequest,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:CodeExcercise.CQRS.Handlers.DeleteCustomerHandler">
+            <summary>
+            Handler to get customer
+            </summary>
+        </member>
+        <member name="M:CodeExcercise.CQRS.Handlers.DeleteCustomerHandler.#ctor(Microsoft.Extensions.Logging.ILogger{CodeExcercise.CQRS.Handlers.DeleteCustomerHandler},Abstraction.Repositories.IRepository{CodeExcercise.Common.Models.DTO.DatabaseCustomer})">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:CodeExcercise.CQRS.Handlers.DeleteCustomerHandler.Handle(CodeExcercise.CQRS.Notification.DeleteCustomerRequest,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:CodeExcercise.CQRS.Handlers.GetCustomersHandler">
+            <summary>
+            Handler to get customer
+            </summary>
+        </member>
+        <member name="M:CodeExcercise.CQRS.Handlers.GetCustomersHandler.#ctor(Microsoft.Extensions.Logging.ILogger{CodeExcercise.CQRS.Handlers.GetCustomersHandler},Abstraction.Services.IMapService{CodeExcercise.Common.Models.Domain.Customer,CodeExcercise.Common.Models.DTO.DatabaseCustomer},Abstraction.Repositories.IRepository{CodeExcercise.Common.Models.DTO.DatabaseCustomer})">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:CodeExcercise.CQRS.Handlers.GetCustomersHandler.Handle(CodeExcercise.CQRS.Requests.GetCustomersRequest,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:CodeExcercise.CQRS.Notification.DeleteCustomerRequest">
+            <summary>
+            CQRS Notification - delete customer
+            </summary>
+        </member>
+        <member name="M:CodeExcercise.CQRS.Notification.DeleteCustomerRequest.#ctor(System.Guid)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:CodeExcercise.CQRS.Notification.DeleteCustomerRequest.CustomerIdent">
+            <summary>
+            Customer Ident to delete
+            </summary>
+        </member>
+        <member name="T:CodeExcercise.CQRS.Requests.CreateCustomerRequest">
+            <summary>
+            CQRS Request - create customer
+            </summary>
+        </member>
+        <member name="M:CodeExcercise.CQRS.Requests.CreateCustomerRequest.#ctor(CodeExcercise.Common.Models.DTO.ClientCustomer)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:CodeExcercise.CQRS.Requests.CreateCustomerRequest.ClientCustomer">
+            <summary>
+            Input costumer object to create in database
+            </summary>
+        </member>
+        <member name="T:CodeExcercise.CQRS.Requests.GetCustomersRequest">
+            <summary>
+            CQRS Request - get customer
+            </summary>
+        </member>
+        <member name="T:CodeExcercise.Database.Context.CustomerContext">
+            <inheritdoc />
+        </member>
+        <member name="M:CodeExcercise.Database.Context.CustomerContext.#ctor(Microsoft.Extensions.Options.IOptions{CodeExcercise.Common.Configuration.SqlConnectionConfiguration})">
+            <inheritdoc />
+        </member>
+        <member name="P:CodeExcercise.Database.Context.CustomerContext.Customers">
+            <summary>
+            Customers
+            </summary>
+        </member>
+        <member name="M:CodeExcercise.Database.Context.CustomerContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CodeExcercise.Database.Context.CustomerContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CodeExcercise.Database.Context.MemoryDatabase.GuidValueGenerator">
+            <inheritdoc />
+        </member>
+        <member name="P:CodeExcercise.Database.Context.MemoryDatabase.GuidValueGenerator.GeneratesTemporaryValues">
+            <inheritdoc />
+        </member>
+        <member name="M:CodeExcercise.Database.Context.MemoryDatabase.GuidValueGenerator.Next(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry)">
+            <inheritdoc />
+        </member>
+        <member name="T:CodeExcercise.Database.Context.MemoryDatabase.OrderIdValueGenerator">
+            <inheritdoc />
+        </member>
+        <member name="P:CodeExcercise.Database.Context.MemoryDatabase.OrderIdValueGenerator.GeneratesTemporaryValues">
+            <inheritdoc />
+        </member>
+        <member name="M:CodeExcercise.Database.Context.MemoryDatabase.OrderIdValueGenerator.Next(Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry)">
+            <inheritdoc />
+        </member>
+        <member name="T:CodeExcercise.Program">
+            <summary>
+            Main method to start app
+            </summary>
+        </member>
+        <member name="M:CodeExcercise.Program.Main(System.String[])">
+            <summary>
+            Main method
+            </summary>
+            <param name="args">Arguments from external</param>
+        </member>
+        <member name="T:CodeExcercise.Services.CustomerRepository">
+            <summary>
+            Repository for customer repository
+            </summary>
+        </member>
+        <member name="M:CodeExcercise.Services.CustomerRepository.#ctor(Microsoft.Extensions.Options.IOptions{CodeExcercise.Common.Configuration.TopLimitsConfiguration},CodeExcercise.Database.Context.CustomerContext)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:CodeExcercise.Services.CustomerRepository.GetAll(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:CodeExcercise.Services.CustomerRepository.Delete(System.Guid,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:CodeExcercise.Services.CustomerRepository.Create(CodeExcercise.Common.Models.DTO.DatabaseCustomer,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:CodeExcercise.Services.Extensions.ExtensionServices">
+            <summary>
+            Extension to IServiceCollection
+            </summary>
+        </member>
+        <member name="M:CodeExcercise.Services.Extensions.ExtensionServices.AddServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Register services
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="T:CodeExcercise.Services.MapCustomerToDatabaseService">
+            <summary>
+            Mapper customer to databaseCustomer both direction 
+            </summary>
+        </member>
+        <member name="M:CodeExcercise.Services.MapCustomerToDatabaseService.Map(CodeExcercise.Common.Models.Domain.Customer)">
+            <inheritdoc />
+        </member>
+        <member name="M:CodeExcercise.Services.MapCustomerToDatabaseService.Map(CodeExcercise.Common.Models.DTO.DatabaseCustomer)">
+            <inheritdoc />
+        </member>
+        <member name="M:CodeExcercise.Services.MapCustomerToDatabaseService.MapEnumerable(System.Collections.Generic.IEnumerable{CodeExcercise.Common.Models.Domain.Customer})">
+            <inheritdoc />
+        </member>
+        <member name="M:CodeExcercise.Services.MapCustomerToDatabaseService.MapEnumerable(System.Collections.Generic.IEnumerable{CodeExcercise.Common.Models.DTO.DatabaseCustomer})">
+            <inheritdoc />
+        </member>
+        <member name="T:CodeExcercise.Services.ValidationCustomerService">
+            <inheritdoc />
+        </member>
+        <member name="M:CodeExcercise.Services.ValidationCustomerService.#ctor(Microsoft.Extensions.Logging.ILogger{CodeExcercise.Services.ValidationCustomerService},FluentValidation.AbstractValidator{CodeExcercise.Common.Models.Domain.Customer})">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:CodeExcercise.Services.ValidationCustomerService.ValidateAndThrow(CodeExcercise.Common.Models.Domain.Customer,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
