@@ -1,5 +1,3 @@
-using System.ComponentModel.DataAnnotations;
-using System.Threading.Tasks;
 using CodeExcercise.Common.Helpers;
 using CodeExcercise.Common.Models;
 using CodeExcercise.Common.Models.Domain;
@@ -8,6 +6,7 @@ using CodeExcercise.CQRS.Notification;
 using CodeExcercise.CQRS.Requests;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace CodeExcercise.Controllers;
 
